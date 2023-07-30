@@ -36,6 +36,17 @@
       }
     }
 
+    &_outline{
+      border-color:var(--btn-primary) !important;
+      background: white;
+      color: var(--btn-primary) !important;
+      &:hover {
+          border-color: transparent !important;
+          background: var(--btn-primary) !important;
+          color: white !important;
+        }
+    }
+
   }
 
   &-secondary {

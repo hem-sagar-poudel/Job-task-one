@@ -19,6 +19,7 @@ const schema = yup.object().shape({
 });
 
 export default function Home() {
+  const [showFields, setShowFields] = useState(false);
   const [items, setNewItems] = useState([
     {
       id: 1,
@@ -98,18 +99,23 @@ export default function Home() {
               <div className="card border-0 shadow-sm mt-5">
                 <div className="card-body">
                   <div className="mb-4">
-                    <h4>New Debit Note</h4>
+                    <div className="d-flex justify-content-between">
+                      <h5>New Debit Note</h5>
+                      <div className="pointer h3 link_light-bg">
+                        <i class="bi bi-x"></i>
+                      </div>
+                    </div>
                   </div>
                   <form onSubmit={handleSubmit(submit)}>
                     <div>
                       <div className="row">
-                        <div className="col-lg-6 mb-3">
+                        <div className="col-xl-4 col-lg-6 mb-3">
                           <Input
                             type="text"
                             name="suppliers"
-                            label="Suppliers"
+                            label="Suppliers name"
                             required={true}
-                            placeholder="eg: Clerk Corporation"
+                            placeholder="Select Suppliers"
                             message=""
                             className=""
                             labelClass=""
@@ -118,7 +124,7 @@ export default function Home() {
                             errors={errors}
                           />
                         </div>
-                        <div className="col-lg-6 mb-3">
+                        <div className="col-xl-4 col-lg-6 mb-3">
                           <Controller
                             name="date"
                             control={control}
@@ -127,7 +133,7 @@ export default function Home() {
                                 <>
                                   <Calendars
                                     {...field}
-                                    label="Record Date"
+                                    label="Delivery date"
                                     name="date"
                                     placeholder="Date"
                                     required={true}
@@ -149,13 +155,13 @@ export default function Home() {
                             }}
                           />
                         </div>
-                        <div className="col-lg-6 mb-3">
+                        <div className="col-xl-4 col-lg-6 mb-3">
                           <Input
                             type="text"
                             name="reference"
-                            label="Reference"
+                            label="Invoice reference no"
                             required={true}
-                            placeholder="Enter reference"
+                            placeholder="Select invoice reference"
                             message=""
                             className=""
                             labelClass=""
@@ -166,8 +172,8 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-md-12 border-top mb-5">
-                          <div className="">
+                        <div className="col-md-12  mb-5">
+                          <div className=" border rounded-2">
                             {true && (
                               <ReactTableCustom
                                 header=""
@@ -178,7 +184,7 @@ export default function Home() {
                                 loading={false}
                                 sorting={false}
                                 paginate={false}
-                                paginatePosition={"top"}
+                                paginatePosition={"bottom"}
                                 paginateValue={paginateCount(items)}
                                 firstPage={firstPage}
                                 nextPage={nextPage}
@@ -186,14 +192,14 @@ export default function Home() {
                                 prevPage={prevPage}
                               />
                             )}
-                          </div>
-                          <div>
-                            <span
-                              className="link_action-bg pointer fw-semibold"
-                              onClick={addNewItems}
-                            >
-                              Add Order or Product
-                            </span>
+                            <div className="p-3">
+                              <span
+                                className="btn btn-md btn-dark h-btn-primary_outline"
+                                onClick={addNewItems}
+                              >
+                                Add Order or Product
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -204,8 +210,8 @@ export default function Home() {
                             name="note"
                             label="Note"
                             required={false}
-                            placeholder="Enter note"
-                            message="*The note is required."
+                            placeholder="Enter notes"
+                            message="*This will appear on print"
                             className=""
                             labelClass=""
                             disabled={false}
@@ -213,18 +219,71 @@ export default function Home() {
                             errors={errors}
                           />
                         </div>
-                        <div className="col-lg-6 mb-3  ">
+                        <div className="col-lg-6 mb-3">
                           <TransactionDetails />
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-lg-6 mb-3">
+                        <div className="col-md-12 py-3">
+                          <div
+                            onClick={() => {
+                              setShowFields(!showFields);
+                            }}
+                            className="d-flex justify-content-between custom-drop-box p-3 pointer rounded border"
+                          >
+                            <p>Custom Fields</p>
+                            <div>
+                              <i class="bi bi-chevron-down"></i>
+                            </div>
+                          </div>
+                          {showFields && (
+                            <>
+                              <div className="p-3 bg-light mt-2 text-muted">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Molestias reiciendis velit
+                                amet consectetur sint temporibus minima eum
+                                voluptatem repellat, porro odit quaerat
+                                quibusdam vitae natus totam modi libero eaque
+                                suscipit cupiditate! Officiis minus voluptatibus
+                                inventore atque placeat excepturi qui eligendi
+                                beatae, nulla, cumque eos facere ipsum, dolorum
+                                maxime magnam esse! Animi molestiae quod
+                                voluptas velit saepe reprehenderit, ratione
+                                minus excepturi qui dicta repudiandae debitis
+                                corporis quia porro beatae assumenda cum tempora
+                                illo unde deserunt quas quam. Explicabo dolorem
+                                quod delectus culpa autem laboriosam
+                                perspiciatis voluptates. Sapiente sed quibusdam
+                                labore voluptates vel. Ad omnis, quod eos
+                                aliquid molestias minus, eaque odit corrupti in
+                                dignissimos sapiente aperiam enim odio facilis,
+                                atque id tempore harum beatae impedit vitae.
+                                Sapiente illo rerum totam repudiandae maxime
+                                ullam veritatis eos vitae, doloremque at
+                                doloribus, id, reiciendis itaque velit.
+                                Consequuntur quisquam itaque facilis omnis,
+                                reprehenderit fugiat sint deserunt totam
+                                corporis nulla. Nam, distinctio cumque! Sequi
+                                maiores ex est quae hic voluptatem facilis,
+                                architecto aut, delectus nisi labore voluptatum
+                                inventore necessitatibus? Quas ipsa aliquam sit
+                                officia assumenda alias nulla commodi,
+                                perferendis, dignissimos minima odio, ipsum
+                                consequatur quod. Doloremque, rem dicta
+                                voluptatem fuga architecto nobis quae veniam
+                                deleniti, error neque quibusdam sequi unde sint
+                                consequuntur, at iusto perferendis molestias.
+                              </div>
+                            </>
+                          )}
+                        </div>
+                        <div className="col-lg-12 mb-3">
                           <Input
                             type="textarea"
                             name="terms-condition"
                             label="Terms & Conditions"
                             required={false}
-                            placeholder="Enter note"
+                            placeholder="Terms and conditions"
                             message=""
                             className=""
                             labelClass=""
@@ -239,7 +298,7 @@ export default function Home() {
                       <div className="text-end">
                         <ButtonSubmit
                           spin={isSubmitting}
-                          className="btn-lg w-auto"
+                          className="btn-md w-auto"
                           label="Save"
                           disabled={isSubmitting}
                         />
@@ -304,6 +363,11 @@ const columns = (removeItems) => {
     {
       Header: <THead className="" title="Tax" />,
       accessor: "tax",
+      Cell: ({cell: {value, column}, row: {original, index}}) => <>{value}</>,
+    },
+    {
+      Header: <THead className="" title="Discount" />,
+      accessor: "discount",
       Cell: ({cell: {value, column}, row: {original, index}}) => <>{value}</>,
     },
     {

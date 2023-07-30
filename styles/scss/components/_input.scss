@@ -6,10 +6,11 @@ input[type=email],
 input[type=number],
 select,
 textarea {
-  // background-color: #fcfcfc;
+  background-color: #f1f1f1 !important;
   border-radius: 3px;
+  border: unset !important;
 
-  // background-color: rgba(var(--tertiary-rgb), 0.1);
+  // background-color: rgba(var(--tertiary-rgb), 0.1) !important;
   &:focus {
     box-shadow: none;
     border-color: rgba(var(--actionable-rgb), 1) !important;
@@ -65,7 +66,7 @@ textarea {
   .input {
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: var(--bg-gray-100);
+    // background-color: var(--bg-gray-100);
 
     &.input-focus {
       +label {
@@ -189,8 +190,10 @@ textarea {
     }
 
     .p-datepicker-trigger {
-      background: rgba(var(--actionable-rgb), 1) !important;
+      // background: rgba(var(--actionable-rgb), 1) !important;
+      background: #f1f1f1 !important;
       border: none !important;
+      color: black !important;
 
       &:focus {
         box-shadow: none !important;

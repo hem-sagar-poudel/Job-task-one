@@ -1,6 +1,6 @@
-import { toast } from 'react-toastify';
+import {toast} from "react-toastify";
 
-export const showToast = (message, type = 'default', options = {}) => {
+export const showToast = (message, type = "default", options = {}) => {
   toast(message, {
     ...options,
     type,
@@ -8,19 +8,19 @@ export const showToast = (message, type = 'default', options = {}) => {
 };
 
 export const showSuccessNotification = (message, options = {}) => {
-  showToast(message, 'success', options);
+  showToast(message, "success", options);
 };
 
 export const showErrorNotification = (message, options = {}) => {
-  showToast(message, 'error', options);
+  showToast(message, "error", options);
 };
 
 export const showWarningNotification = (message, options = {}) => {
-  showToast(message, 'warning', options);
+  showToast(message, "warning", options);
 };
 
 export const showInfoNotification = (message, options = {}) => {
-  showToast(message, 'info', options);
+  showToast(message, "info", options);
 };
 
 export const showLoadingNotification = (message, options = {}) => {
@@ -29,14 +29,14 @@ export const showLoadingNotification = (message, options = {}) => {
   });
 
   return {
-    update: newOptions => {
+    update: (newOptions) => {
       toast.update(toastId, newOptions);
     },
     success: (message, newOptions = {}) => {
       toast.update(toastId, {
         render: message,
         autoClose: 5000,
-        type: 'success',
+        type: "success",
         isLoading: false,
         closeOnClick: true,
         ...newOptions,
@@ -46,7 +46,7 @@ export const showLoadingNotification = (message, options = {}) => {
       toast.update(toastId, {
         render: message,
         autoClose: 5000,
-        type: 'error',
+        type: "error",
         isLoading: false,
         closeOnClick: true,
         ...newOptions,

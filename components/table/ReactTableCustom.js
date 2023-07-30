@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useState} from "react";
 import {useSortBy, useTable, usePagination} from "react-table";
 
 function ReactTableCustom({...props}) {
@@ -7,13 +7,13 @@ function ReactTableCustom({...props}) {
   const [tableHeaderShow, setTableHeaderShow] = useState(true);
   const [data, setData] = useState([]);
 
-  // let data = useMemo(() => props.data[0][props.data[1]]);
-  const columns = useMemo(() => props.columns);
-  const loading = useMemo(() => props.loading);
+  // let data = props.data[0][props.data[1]];
+  const columns = props.columns;
+  const loading = props.loading;
 
-  const currentPage = useMemo(() => props.paginateValue?.currentPage);
-  const totalPage = useMemo(() => props.paginateValue?.lastPage);
-  const total_count = useMemo(() => props.paginateValue?.total);
+  const currentPage = props.paginateValue?.currentPage;
+  const totalPage = props.paginateValue?.lastPage;
+  const total_count = props.paginateValue?.total;
 
   useEffect(() => {
     let data = [];
@@ -304,7 +304,7 @@ function ReactTableCustom({...props}) {
                   ""
                 )}
               </table>
-              {!data.length ? (
+              {/* {!data.length ? (
                 <>
                   <div className="text-muted fs-2 text-center">
                     Record Not Found
@@ -312,7 +312,7 @@ function ReactTableCustom({...props}) {
                 </>
               ) : (
                 ""
-              )}
+              )} */}
             </div>
             {props.paginatePosition == "bottom" && (
               <>
