@@ -23,6 +23,7 @@ const schema = yup.object().shape({
 export default function Home() {
   const [items, setNewItems] = useState([
     {
+      id: 1,
       name: "Product name",
       batch: 1,
       warehouse: "Ktm",
@@ -69,8 +70,11 @@ export default function Home() {
   const prevPage = () => {};
 
   const addNewItems = () => {
+    let id = items.length > 0 ? items[items.length - 1].id + 1 : 1;
     setNewItems([
+      ...items,
       {
+        id: id,
         name: "Product name",
         batch: 1,
         warehouse: "Ktm",
@@ -80,8 +84,12 @@ export default function Home() {
         tax: "13% vat",
         amount: 4500,
       },
-      {...items},
     ]);
+  };
+
+  const removeItems = (item_id) => {
+    const itemsList = items.filter(({id}) => item_id != id);
+    setNewItems(itemsList);
   };
   return (
     <>
@@ -165,7 +173,7 @@ export default function Home() {
                               <ReactTableCustom
                                 header=""
                                 data={items}
-                                columns={columns()}
+                                columns={columns(removeItems)}
                                 tableHeaderShow={true}
                                 headerShow={false}
                                 loading={false}
@@ -249,8 +257,16 @@ export default function Home() {
   );
 }
 
-const columns = () => {
+const columns = (removeItems) => {
   return [
+    // {
+    //   Header: <THead className="" title="id" />,
+    //   accessor: "id",
+    //   classNameHeader: "",
+    //   classNameCell: "",
+    //   disableSortBy: true,
+    //   Cell: ({cell: {value, column}, row: {original, index}}) => <>{value}</>,
+    // },
     {
       Header: <THead className="" title="Item/Product" />,
       accessor: "name",
@@ -302,7 +318,12 @@ const columns = () => {
       Cell: ({cell: {value, column}, row: {original, index}}) => (
         <>
           <div className="pointer">
-            <span className="text-danger">
+            <span
+              className="text-danger"
+              onClick={() => {
+                removeItems(original.id);
+              }}
+            >
               <i class="bi bi-x-lg"></i>
             </span>
           </div>
