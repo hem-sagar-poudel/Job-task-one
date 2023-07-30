@@ -1,0 +1,39 @@
+//link
+.link {
+  
+  &_light {
+    color: white;
+    &:hover {
+      color: var(--link-secondary);
+    }
+  }
+
+  &_action-bg {
+    color: var(--link-primary);
+    &:hover {
+      color: var(--bs-dark);
+    }
+  }
+
+  &_light-bg {
+    color: var(--bs-dark);
+    &:hover {
+      color: var(--link-primary);
+    }
+  }
+
+  &_dark-bg {
+    color: var(--link-primary);
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+//pointer
+.pointer {
+  cursor: pointer !important;
+}
+.restrict{
+  cursor:not-allowed
+}

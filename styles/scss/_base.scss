@@ -1,0 +1,95 @@
+
+:root {
+  // primary  colors
+  --theme-primary: #354cb5;
+  --theme-secondary: #4361ee;
+
+  //actionable colors
+  --theme-actionable: #4361ee;
+  --theme-actionable-secondary: #354cb5;
+  
+
+  --actionable-rgb: 67, 97, 238;
+  --actionable-secondary-rgb: 53, 76, 181;
+
+  //button color
+    //primary
+  --btn-primary: var(--theme-actionable-secondary);
+  --btn-primary-rgb: var(--theme-actionable-secondary-rgb);
+    //secondary
+  --btn-secondary: #9aaaf5;
+  --btn-secondary-rgb: 102, 116, 180;
+
+  //link color
+    //primary
+  --link-primary: #4361ee;
+  --link-primary-rgb: 67, 97, 238;
+    //secondary
+  --link-secondary:#9aaaf5;
+  --link-secondary-rgb:154, 170, 245;
+
+
+  //social media colors
+  --facebook-color: #4267b2;
+  --twitter-color: #00aaee;
+  --instagram-color: #e1306c;
+  --linkedin-color: #0077b5;
+  --teligram-color: #0088cc;
+  --weibo-color: #df2029;
+
+  --link-color: #1B4363;
+  --link-color-hover: #236294;
+
+
+
+  // font sizes
+  --size-small: 12px; // small
+  --size-base: 14px; // base
+  --size-font: 16px; // font
+  --size-fontLg: 18px; // fontLg
+  --size-medium: 20px; // Medium
+  --size-large: 24px; // large
+  --size-xLarge: 28px; // xLarge
+  --size-xxLarge: 32px; // xxLarge
+  --size-big: 40px; // big
+  --size-huge: 64px; // huge
+
+  --bg-main: var(--bs-gray-100);
+  
+}
+
+* {
+  transition: 0.3s ease-in-out 0s;
+}
+
+body {
+  background: rgb(227, 227, 227);
+  // background: linear-gradient(180deg, var(--bs-gray-100) 0%, var(--bs-gray-100) 25%, rgba(255, 255, 255, 1) 100%);
+  // background-color: var(--bg-main) !important;
+  background: linear-gradient(180deg, #f1f6fc 10%, var(--bs-gray-100) 25%, rgb(255, 255, 255) 100%);
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, p {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+li{ list-style-type: none;}
+
+.pointer{
+  cursor: pointer;
+}
+
+

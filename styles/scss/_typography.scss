@@ -1,0 +1,76 @@
+ .co{
+  &-primary{
+    color:var(--theme-primary) !important;
+  }
+  &-secondary{
+    color: var(--theme-secondary);
+  }
+
+  //represent
+  &-success{
+    color: var(--bs-success);
+  }
+  &-warning{
+    color: var(--bs-warning);
+  }
+  &-danger{
+    color: var(--bs-danger);
+  }
+  &-info{
+    color: var(--bs-info);
+  }
+}
+
+.h-bg{
+  &-primary{
+    background-color:var(--theme-primary) !important;
+  }
+  &-secondary{
+    background-color:var(--theme-secondary) !important;
+  }
+  &-actionable {
+    background-color: var(--theme-actionable) !important;
+  }
+
+  &-actionable-primary {
+    background-color: var(--theme-actionable-primary) !important;
+  }
+
+  &-actionable-secondary {
+    background-color: var(--theme-actionable-secondary) !important;
+  }
+
+  &-skeleton {
+    background-color: var(--bs-gray-300) !important;
+  }
+}
+
+.background-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.background-contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  &:before {
+    content: '';
+    background: #d7e3ec;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+

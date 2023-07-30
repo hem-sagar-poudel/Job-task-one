@@ -1,0 +1,164 @@
+.btn-md{
+  @include respond(tab-port){
+    --bs-btn-padding-y: 0.25rem;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-font-size: 0.875rem;
+  }
+}
+.btn-xs{
+  --bs-btn-padding-y: .25rem;
+  --bs-btn-padding-x: .5rem;
+  --bs-btn-font-size: .75rem;
+}
+
+.btn-xxs{
+  --bs-btn-padding-y: .14rem;
+  --bs-btn-padding-x: .25rem;
+  --bs-btn-font-size: .75rem;
+}
+
+.h-btn {
+  &-primary {
+    background: var(--btn-primary);
+    border-color: transparent;
+    &:hover {
+      border-color: transparent !important;
+      background: var(--btn-primary) !important;
+    }
+
+    &:disabled {
+      background: var(--btn-secondary);
+      border-color: transparent;
+
+      &:hover {
+        border-color: transparent !important;
+        background: var(--bs-dark) !important;
+      }
+    }
+
+  }
+
+  &-secondary {
+    background: var(--btn-secondary);
+    border-color: transparent;
+
+    &:hover {
+      border-color: transparent !important;
+      background: var(--btn-secondary) !important;
+    }
+  }
+
+  &-light {
+    background: rgba(var(--actionable-secondary-rgb), 0.1) !important;
+    color: rgba(var(--actionable-secondary-rgb), 1) !important;
+    border-color: transparent;
+    
+    &:hover {
+      border-color: transparent !important;
+      background: var(--btn-primary) !important;
+      color: white !important;
+    }
+  }
+
+  &-actionable-primary {
+    background: var(--theme-actionable-primary) !important;
+    border-color: transparent;
+
+    &:hover {
+      border-color: transparent !important;
+      background: var(--theme-actionable-primary) !important;
+    }
+  }
+
+  &-actionable-secondary {
+    background: var(--theme-actionable-secondary) !important;
+    border-color: transparent;
+
+    &:hover {
+      border-color: transparent !important;
+      background: var(--theme-actionable-secondary) !important;
+    }
+  }
+
+  &-danger {
+    background: var(--bs-danger) !important;
+    border-color: transparent;
+
+    &:hover {
+      border-color: transparent !important;
+      background: var(--bs-danger) !important;
+
+    }
+  }
+
+  &-warning {
+    background: var(--bs-warning) !important;
+    color: var(--bs-dark);
+    border-color: transparent;
+
+    &:hover {
+      border-color: transparent !important;
+      background: var(--bs-warning) !important;
+      color: var(--bs-dark);
+    }
+  }
+  &-highlight{
+    --color-rgb: 180, 101, 218;
+    // --color-rgb: 207, 108, 201;
+    // --color-rgb: 238, 96, 156;
+    background: rgba(var(--color-rgb), 0.1) !important;
+    color: rgba(var(--color-rgb), 1) !important;
+    border-color: transparent;
+  
+    &:hover {
+      border-color: transparent !important;
+      background: rgba(var(--color-rgb), 0.1) !important;
+      color: rgba(var(--color-rgb), 1) !important;
+      // color: white !important;
+    }
+  }
+}
+
+.transition-up{
+  position: relative;
+  top: 0px;
+  transition: 0.2s ease-in-out 0s !important;
+  &:hover{
+    top: -3px;
+  }
+}
+
+.spinner-border{
+  --bs-spinner-width: 1.2rem;
+  --bs-spinner-height: 1.2rem;
+}
+
+.table {
+  .btn-icon {
+    cursor: pointer;
+    background-color: rgba(var(--bs-secondary-rgb), 0.1);
+    color: rgba(var(--bs-secondary-rgb), 0.8);
+    padding: 0px 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(var(--bs-secondary-rgb), 0.1);
+  }
+
+  &-delete-icon {
+    &:hover {
+
+      background-color: rgba(var(--bs-danger-rgb), 0.1) !important;
+      color: rgba(var(--bs-danger-rgb), 1) !important;
+      border-color: rgba(var(--bs-danger-rgb), 0.1) !important;
+    }
+  }
+
+  &-edit-icon {
+    &:hover {
+
+      background-color: rgba(var(--actionable-rgb), 0.1) !important;
+      color: rgba(var(--actionable-rgb), 1) !important;
+      border-color: rgba(var(--actionable-rgb), 0.1) !important;
+    }
+  }
+}
+

@@ -1,0 +1,51 @@
+@import 'base';
+@import 'mixin';
+@import 'typography';
+@import 'components/link';
+@import 'components/buttons';
+@import 'components/input';
+
+body{
+  background-color: var(--bs-gray-100);
+}
+
+.prime-calendar {
+  z-index: 1;
+  position: relative;
+
+  .p-calendar {
+    .p-inputwrapper-focus {
+      &+label {
+        font-size: var(--size-base) !important;
+        top: -15px !important;
+        left: 15px !important;
+        transform: translate(0, 0%) !important;
+      }
+    }
+
+    .p-datepicker-trigger {
+      background: rgba(var(--actionable-rgb), 1) !important;
+      border: none !important;
+
+      &:focus {
+        box-shadow: none !important;
+        border-color: rgba(var(--actionable-rgb), 1) !important;
+        outline: 4px solid rgba(var(--actionable-rgb), 0.4) !important;
+      }
+    }
+  }
+}
+
+.Toastify__toast {
+  border-radius: 50px !important;
+}
+
+.Toastify__toast-body {
+  margin: 0px !important;
+  padding: 0px 20px !important;
+  text-align: center;
+}
+
+.Toastify__close-button {
+  display: none;
+}
