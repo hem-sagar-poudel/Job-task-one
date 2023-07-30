@@ -13,11 +13,9 @@ import {THead} from "components/table";
 import {useState} from "react";
 
 const schema = yup.object().shape({
-  suppliers: yup
-    .string()
-    .required("Supplier Name is Required.")
-    .min(100)
-    .max(300),
+  suppliers: yup.string().required("Supplier Name is Required.").max(300),
+  date: yup.string().required("Date is Required."),
+  reference: yup.string().required("Reference is Required."),
 });
 
 export default function Home() {
@@ -105,7 +103,7 @@ export default function Home() {
                   <form onSubmit={handleSubmit(submit)}>
                     <div>
                       <div className="row">
-                        <div className="col-6 mb-3">
+                        <div className="col-lg-6 mb-3">
                           <Input
                             type="text"
                             name="suppliers"
@@ -120,7 +118,7 @@ export default function Home() {
                             errors={errors}
                           />
                         </div>
-                        <div className="col-6 mb-3">
+                        <div className="col-lg-6 mb-3">
                           <Controller
                             name="date"
                             control={control}
@@ -130,8 +128,9 @@ export default function Home() {
                                   <Calendars
                                     {...field}
                                     label="Record Date"
-                                    name="dob"
+                                    name="date"
                                     placeholder="Date"
+                                    required={true}
                                     className="w-100"
                                     selectionMode="range"
                                     numberOfMonths={2}
@@ -150,7 +149,7 @@ export default function Home() {
                             }}
                           />
                         </div>
-                        <div className="col-6 mb-3">
+                        <div className="col-lg-6 mb-3">
                           <Input
                             type="text"
                             name="reference"
@@ -199,7 +198,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-6 mb-3">
+                        <div className="col-lg-6 mb-3">
                           <Input
                             type="textarea"
                             name="note"
@@ -214,12 +213,12 @@ export default function Home() {
                             errors={errors}
                           />
                         </div>
-                        <div className="col-6 mb-3  ">
+                        <div className="col-lg-6 mb-3  ">
                           <TransactionDetails />
                         </div>
                       </div>
                       <div className="row">
-                        <div className="col-6 mb-3">
+                        <div className="col-lg-6 mb-3">
                           <Input
                             type="textarea"
                             name="terms-condition"
