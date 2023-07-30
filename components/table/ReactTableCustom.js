@@ -304,7 +304,7 @@ function ReactTableCustom({...props}) {
                   ""
                 )}
               </table>
-              {data.length ? (
+              {!data.length ? (
                 <>
                   <div className="text-muted fs-2 text-center">
                     Record Not Found
